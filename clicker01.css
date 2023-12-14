@@ -1,0 +1,141 @@
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* root */
+:root {
+    /* paddings */
+    --PADDING-EXTRA-SMALL: clamp(0.15rem, 1vh, 0.25rem);
+    --PADDING-SMALL: clamp(0.25rem, 1.5vh, 0.5rem);
+    --PADDING-MEDIUM: clamp(0.5rem, 2vh, 1.5rem);
+    --PADDING-HUGE: clamp(1rem, 2.25vh, 2.25rem);
+
+    /* margins */
+    --MARGIN-SMALL: clamp(0.25rem, 1.5vh, 0.5rem);
+    --MARGIN-MEDIUM: clamp(0.5rem, 2vh, 1.5rem);
+    --MARGIN-HUGE: clamp(1rem, 2.25vh, 2.25rem);
+    --MARGIN-TB: 0.5em 0;
+
+    /* colors */
+    --WHITE: snow;
+    --WHITE-DARKER: rgb(235, 231, 231);
+
+    --LIGHT-GRAY-MAIN2: rgb(2, 110, 2);
+    --LIGHT-GRAY-MAIN1: rgb(5, 98, 148);
+
+    --GRAY-MAIN2: rgb(6, 56, 6);
+    --GRAY-MAIN1: rgb(9, 73, 105);
+    
+    --BLACK-MAIN2: rgb(1, 36, 1);
+    --BLACK-MAIN1: rgb(1, 22, 31);
+
+    --MAIN1: rgb(28, 135, 177);
+    --DARKER-MAIN2: green;
+
+    /* borders */
+    --BORDER-SMALL: clamp(2px, 0.33vh, 4px) solid;
+    --BORDER-RADIUS-SMALL: clamp(4px, 0.5vh, 16px) ;
+}
+
+
+/* general */
+
+html {
+    background-color: var(--MAIN1);
+    font-family: monospace;
+    font-size: clamp(1rem, 2.2vh, 1.5rem);
+    color: var(--BLACK-MAIN1);
+
+    overflow-x: hidden;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    border-bottom: var(--BORDER-SMALL) var(--GRAY-MAIN2);
+    padding: var(--PADDING-MEDIUM);
+    display: flex;
+    justify-content: center;
+    background-color: var(--DARKER-MAIN2);
+}
+
+header h1 {
+    color: var(--WHITE);
+    font-weight: 800;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--PADDING-MEDIUM);
+    user-select: none;
+}
+
+section {
+    padding: var(--PADDING-SMALL);
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+section button {
+    padding: var(--PADDING-EXTRA-SMALL);
+    background-color: var(--WHITE);
+    border: var(--BORDER-SMALL) var(--BLACK-MAIN1);
+    margin: var(--MARGIN-TB);
+}
+
+section h2 {
+    margin-bottom: 0.75em;
+    color: var(--WHITE);
+}
+
+footer {
+    position: sticky;
+    color: var(--WHITE);
+    bottom: 0;
+    border-top: var(--BORDER-SMALL) var(--LIGHT-GRAY-MAIN2);
+    padding: var(--PADDING-MEDIUM);
+    display: flex;
+    justify-content: center;
+    background-color: var(--DARKER-MAIN2);
+
+}
+
+footer p {
+    filter: opacity(0.8);
+}
+
+
+/* classes */
+
+.section2 {
+    border: none;
+}
+
+.score, .level {
+    color: var(--WHITE);
+}
+
+button:focus, button:hover {
+    background-color: var(--WHITE-DARKER);
+}
+
+
+
+@media screen and (min-width: 800px) {
+    section {
+        border: var(--BORDER-SMALL) var(--GRAY-MAIN1);
+        border-radius: var(--BORDER-RADIUS-SMALL);
+    }
+}
